@@ -56,7 +56,7 @@
     <link rel="next" href="level0-github-hosting.html" />
     
     
-    <link rel="prev" href="iiif-hosting-saas.html" />
+    <link rel="prev" href="setting-up-cantaloupe.html" />
     
 
     </head>
@@ -189,12 +189,27 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.1.3" data-path="static-tiles.html">
+        <li class="chapter " data-level="2.1.3" data-path="setting-up-cantaloupe.html">
+            
+                <a href="setting-up-cantaloupe.html">
+            
+                    
+                        <b>2.1.3.</b>
+                    
+                    Running a IIIF Image server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.4" data-path="static-tiles.html">
             
                 <a href="static-tiles.html">
             
                     
-                        <b>2.1.3.</b>
+                        <b>2.1.4.</b>
                     
                     Generating static tiles
             
@@ -204,29 +219,14 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.4" data-path="level0-github-hosting.html">
+        <li class="chapter " data-level="2.1.5" data-path="level0-github-hosting.html">
             
                 <a href="level0-github-hosting.html">
             
                     
-                        <b>2.1.4.</b>
-                    
-                    Hosting with github pages
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.5" data-path="setting-up-cantaloupe.html">
-            
-                <a href="setting-up-cantaloupe.html">
-            
-                    
                         <b>2.1.5.</b>
                     
-                    Running a IIIF Image server
+                    Hosting with github pages
             
                 </a>
             
@@ -277,31 +277,46 @@
             
         </li>
     
-        <li class="chapter " data-level="3.1.2" >
+        <li class="chapter " data-level="3.1.2" data-path="../presentation/activity-group-manifest.html">
             
-                <span>
+                <a href="../presentation/activity-group-manifest.html">
             
                     
                         <b>3.1.2.</b>
                     
-                    Creating a manifest
+                    Exercise
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="3.1.3" >
+        <li class="chapter " data-level="3.1.3" data-path="../presentation/bodleian_editor/">
             
-                <span>
+                <a href="../presentation/bodleian_editor/">
             
                     
                         <b>3.1.3.</b>
                     
-                    Annotations
+                    Creating a manifest
             
-                </span>
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../presentation/view_manifest/">
+            
+                <a href="../presentation/view_manifest/">
+            
+                    
+                        <b>3.1.4.</b>
+                    
+                    Viewing your manifest
+            
+                </a>
             
 
             
@@ -364,27 +379,29 @@
 <p>To generate these IIIF images we are going to use a IIIF tilling program which is available on Github. </p>
 <h2 id="step-1-download-the-iiif-tiler">Step 1: Download the IIIF Tiler</h2>
 <ul>
-<li>Navigate to the release page: <a href="https://github.com/glenrobson/iiif-tiler/releases" target="_blank">https://github.com/glenrobson/iiif-tiler/releases</a></li>
+<li>Navigate to the release page: <a href="https://github.com/glenrobson/iiif-tiler/releases/tag/0.3" target="_blank">https://github.com/glenrobson/iiif-tiler/releases/tag/0.3</a></li>
 <li>Click the <code>assets</code> drop down</li>
-<li>Download <a href="https://github.com/glenrobson/iiif-tiler/releases/download/0.1/iiif-tiler.jar" target="_blank">iiif-tiler.jar</a></li>
-<li>Store this jar file in your <code>iiif-workshop</code> directory</li>
+<li>Download <a href="https://github.com/glenrobson/iiif-tiler/releases/download/0.3/iiif-tiler.jar" target="_blank">iiif-tiler.jar</a></li>
+<li>Store this jar file in your <code>~/iiif-workshop</code> directory</li>
 </ul>
 <h2 id="step-2-prepare-your-image-files">Step 2: Prepare your image files</h2>
 <ul>
-<li>Move the image files you want to work with into your <code>iiif-workshop</code> directory</li>
+<li>Move the image files you want to work with into your <code>~/iiif-workshop</code> directory</li>
 </ul>
 <h2 id="step-3-generate-the-iiif-image-tiles">Step 3: Generate the IIIF Image tiles</h2>
-<p>Either:</p>
+<p>Now either:</p>
 <ul>
-<li>Drag an image on to the iiif-tiler.jar in the Finder or Windows interface.</li>
+<li>Double click on the <code>iiif-tiler.jar</code> file in Finder or Windows.</li>
 </ul>
-<p>or</p>
+<p>or </p>
 <ul>
 <li>from the command line run:</li>
 </ul>
-<p><code>java -jar iiif-tiler.jar images/67352ccc-d1b0-11e1-89ae-279075081939.jpg</code></p>
+<pre><code class="lang-sh"><div class="sunlight-container sunlight-theme-gitbook"><div class="sunlight-code-container"><pre class="sunlight-highlight-bash sunlight-highlighted"><span class="sunlight-bash"><span class="sunlight-command">cd</span>&#xA0;<span class="sunlight-punctuation">~</span><span class="sunlight-operator">/</span><span class="sunlight-ident">iiif</span><span class="sunlight-operator">-</span><span class="sunlight-ident">workshop</span>
+<span class="sunlight-ident">java</span>&#xA0;<span class="sunlight-operator">-</span><span class="sunlight-ident">jar</span>&#xA0;<span class="sunlight-ident">iiif</span><span class="sunlight-operator">-</span><span class="sunlight-ident">tiler</span><span class="sunlight-operator">.</span><span class="sunlight-ident">jar</span>
+</span></pre></div></div></code></pre>
 <ul>
-<li>Both options will generate the IIIF tiles in a <code>iiif</code> directory.</li>
+<li>This will generate the IIIF image tiles in a <code>iiif</code> directory for every image it finds in the same directory as the iiif-tiler.jar.</li>
 </ul>
 <h2 id="step-4-point-the-chrome-webserver-to-your-iiif-workshop-directory">Step 4: Point the Chrome webserver to your <code>iiif-workshop</code> directory</h2>
 <ul>
@@ -410,16 +427,16 @@
 <li>Click this directory then click on the <code>info.json</code>.</li>
 <li>If your image was called picture.png the URL should be.</li>
 </ul>
-<p><code>http://127.0.0.1:8887/iiif/picture/info.json</code></p>
+<p><code>http://127.0.0.1:8887/iiif/image/info.json</code></p>
 <ul>
 <li>If you see the info.json you are now ready to view your image in a IIIF Image viewer.</li>
 </ul>
 <h2 id="step-6-show-your-image-in-a-iiif-viewer">Step 6: Show your image in a IIIF Viewer</h2>
 <p>You can now load your image to a IIIF image viewer. The main image viewer is OpenseaDragon. This takes the URL of the info.json. So if your info.json URL is:</p>
-<p><code>http://127.0.0.1:8887/iiif/picture/info.json</code></p>
+<p><code>http://127.0.0.1:8887/iiif/image/info.json</code></p>
 <p>Open it with OpenseaDragon:</p>
-<p><a href="http://iiif.gdmrdigital.com/openseadragon/index.html?image=http://127.0.0.1:8887/iiif/picture/info.json" target="_blank">http://iiif.gdmrdigital.com/openseadragon/index.html?image=http://127.0.0.1:8887/iiif/picture/info.json</a></p>
-<div class="git-author-container git-author-bottom"><div class="modified">Last modified by Glen Robson 2019-09-23 12:01:26</div><div class="created">Created by Glen Robson 2019-09-23 12:01:26</div></div>
+<p><a href="http://iiif.gdmrdigital.com/openseadragon/index.html?image=http://127.0.0.1:8887/iiif/image/info.json" target="_blank">http://iiif.gdmrdigital.com/openseadragon/index.html?image=http://127.0.0.1:8887/iiif/image/info.json</a></p>
+<div class="git-author-container git-author-bottom"><div class="modified">Last modified by Glen Robson 2019-09-25 18:14:48</div><div class="created">Created by Glen Robson 2019-09-23 12:01:26</div></div>
                                 
                                 </section>
                             
@@ -446,7 +463,7 @@
 
             
                 
-                <a href="iiif-hosting-saas.html" class="navigation navigation-prev " aria-label="Previous page: IIIF Hosting">
+                <a href="setting-up-cantaloupe.html" class="navigation navigation-prev " aria-label="Previous page: Running a IIIF Image server">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -462,7 +479,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Generating static tiles","level":"2.1.3","depth":2,"next":{"title":"Hosting with github pages","level":"2.1.4","depth":2,"path":"image-api/level0-github-hosting.md","ref":"image-api/level0-github-hosting.md","articles":[]},"previous":{"title":"IIIF Hosting","level":"2.1.2","depth":2,"path":"image-api/iiif-hosting-saas.md","ref":"image-api/iiif-hosting-saas.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","theme-default","toggle-chapters","git-author","-highlight","sunlight-highlighter","toggle-chapters"],"styles":{},"pluginsConfig":{"git-author":{"position":"bottom","modifyTpl":"Last modified by {user} {timeStamp}","createTpl":"Created by {user} {timeStamp}","timeStampFormat":"YYYY-MM-DD HH:mm:ss"},"include":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IIIF 5 Day Workshop","gitbook":"3.2.3"},"file":{"path":"image-api/static-tiles.md","mtime":"2019-09-23T10:35:11.326Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-25T08:56:14.473Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Generating static tiles","level":"2.1.4","depth":2,"next":{"title":"Hosting with github pages","level":"2.1.5","depth":2,"path":"image-api/level0-github-hosting.md","ref":"image-api/level0-github-hosting.md","articles":[]},"previous":{"title":"Running a IIIF Image server","level":"2.1.3","depth":2,"path":"image-api/setting-up-cantaloupe.md","ref":"image-api/setting-up-cantaloupe.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","theme-default","toggle-chapters","git-author","-highlight","sunlight-highlighter","toggle-chapters"],"styles":{},"pluginsConfig":{"git-author":{"position":"bottom","modifyTpl":"Last modified by {user} {timeStamp}","createTpl":"Created by {user} {timeStamp}","timeStampFormat":"YYYY-MM-DD HH:mm:ss"},"include":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IIIF 5 Day Workshop","gitbook":"3.2.3"},"file":{"path":"image-api/static-tiles.md","mtime":"2019-09-25T16:34:43.950Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-25T16:35:43.674Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
