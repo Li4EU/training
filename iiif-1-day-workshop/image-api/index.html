@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Generating static tiles · IIIF 5 Day Workshop</title>
+        <title>Introduction · IIIF 5 Day Workshop</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="level0-github-hosting.html" />
+    <link rel="next" href="iiif-hosting-saas.html" />
     
     
-    <link rel="prev" href="setting-up-cantaloupe.html" />
+    <link rel="prev" href="../prerequisites.html" />
     
 
     </head>
@@ -128,7 +128,7 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="./">
+        <li class="chapter active" data-level="2.1" data-path="./">
             
                 <a href="./">
             
@@ -174,7 +174,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.1.3" data-path="static-tiles.html">
+        <li class="chapter " data-level="2.1.3" data-path="static-tiles.html">
             
                 <a href="static-tiles.html">
             
@@ -312,7 +312,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Generating static tiles</a>
+        <a href=".." >Introduction</a>
     </h1>
 </div>
 
@@ -327,71 +327,79 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="generating-static-tiles">Generating static tiles</h1>
-<p>As mentioned in the previous chapter, the IIIF Image API defines the following structure:</p>
-<p><code>http://host:port/identifier/region/size/rotation/quality.format</code></p>
-<p>It is possible to generate images that fit this URL structure and conform to the IIIF Image API using a tile generator. This will generate the minimum required amount of files to implement the IIIF Image API. It does have some limitations, the main one being it is not possible to request images of a size that haven&apos;t been pre-generated. This type of pre-generated IIIF Image is known as a <code>Level 0</code> implementation. </p>
-<p>To generate these IIIF images we are going to use a IIIF tilling program which is available on Github. </p>
-<h2 id="step-1-download-the-iiif-tiler">Step 1: Download the IIIF Tiler</h2>
+                                <h1 id="iiif-image-api">IIIF Image API</h1>
+<h2 id="overview">Overview</h2>
+<p>The Image API provides for a standardized way to request and deliver images. Having this standardization allows both browser and server applications to reuse software and provide a consistent experience for requesting images.</p>
+<p>Presentation available on <a href="https://www.slideshare.net/GlenRobson/iiif-image-api-glen" target="_blank">SlideShare</a>.</p>
+<h2 id="presenter">Presenter</h2>
+<p>Glen Robson, IIIF Technical Coordinator</p>
+<p>National Library of Wales links:</p>
 <ul>
-<li>Navigate to the release page: <a href="https://github.com/glenrobson/iiif-tiler/releases/tag/0.3" target="_blank">https://github.com/glenrobson/iiif-tiler/releases/tag/0.3</a></li>
-<li>Click the <code>assets</code> drop down</li>
-<li>Download <a href="https://github.com/glenrobson/iiif-tiler/releases/download/0.3/iiif-tiler.jar" target="_blank">iiif-tiler.jar</a></li>
-<li>Store this jar file in your <code>~/iiif-workshop</code> directory</li>
+<li><a href="http://bit.ly/2zPFx8a" target="_blank">Digitisation</a></li>
+<li><a href="http://newspapers.library.wales/" target="_blank">Newspapers</a></li>
 </ul>
-<h2 id="step-2-prepare-your-image-files">Step 2: Prepare your image files</h2>
+<h2 id="pre-iiif-viewers">Pre-IIIF Viewers</h2>
+<p>Example from Ben Albritton&apos;s blog <a href="http://stanford.io/1PW789d" target="_blank">Fellow Travelers: The Canterbury Tales and IIIF</a></p>
+<h2 id="image-api">Image API</h2>
+<p>Latest version of the Image API is available at <a href="http://iiif.io/api/image/2.1/" target="_blank">http://iiif.io/api/image/2.1/</a>.</p>
+<h2 id="image-api-demonstration">Image API demonstration</h2>
+<p>Many of these examples are from Tom Crane&apos;s <a href="http://resources.digirati.com/iiif/an-introduction-to-iiif/" target="_blank">excellent blog series</a>.</p>
 <ul>
-<li>Move the image files you want to work with into your <code>~/iiif-workshop</code> directory</li>
+<li><a href="http://wellcomelibrary.org/item/b14658197" target="_blank">Original oil painting from the Wellcome Trust</a></li>
+<li><a href="https://tomcrane.github.io/the-long-iiif/image-api.html" target="_blank">Example API calls</a></li>
+<li><a href="http://tomcrane.github.io/presentations/tile-exploder.html" target="_blank">Tile Explorer</a></li>
+<li><a href="https://dlcs.io/iiif-img/3/2/04fbbb28-d5a7-4408-b7da-800c4e65eda3/info.json" target="_blank">Example info.json</a></li>
 </ul>
-<h2 id="step-3-generate-the-iiif-image-tiles">Step 3: Generate the IIIF Image tiles</h2>
-<p>Now either:</p>
+<h3 id="image-api-exercises">Image API Exercises</h3>
+<p>Look at the following and play around with the parameters:</p>
 <ul>
-<li>Double click on the <code>iiif-tiler.jar</code> file in Finder or Windows.</li>
+<li><a href="http://ronallo.com/iiif-workshop/image/detailed-example.html" target="_blank">Jason Ronallo&apos;s detailed example</a></li>
+<li><a href="https://tomcrane.github.io/the-long-iiif/image-api.html" target="_blank">Tom Cranes example</a></li>
+<li><a href="https://jbhoward-dublin.github.io/IIIF-imageManipulation/index.html?imageID=https://iiif.ucd.ie/loris/ivrla:10408" target="_blank">UCD image cropper</a></li>
 </ul>
-<p>or </p>
-<ul>
-<li>from the command line run:</li>
+<h3 id="questions">Questions</h3>
+<p>In pairs answer the following questions:</p>
+<ol>
+<li>Given the following image URL: <a href="https://iiif.lib.ncsu.edu/iiif/mc00198-008-ff0051-000-001_0001/full/512,/0/default.jpg" target="_blank">https://iiif.lib.ncsu.edu/iiif/mc00198-008-ff0051-000-001_0001/full/512,/0/default.jpg</a> what would be the URL for the <code>info.json</code>?</li>
+<li>What is the width and height of the biggest size image?</li>
+<li>Construct a URL that:<ul>
+<li>Shows the full image</li>
+<li>is 512px wide</li>
+<li>is upside down</li>
+<li>gray scale</li>
+<li>has a format of <code>png</code></li>
 </ul>
-<pre><code class="lang-sh"><div class="sunlight-container sunlight-theme-gitbook"><div class="sunlight-code-container"><pre class="sunlight-highlight-bash sunlight-highlighted"><span class="sunlight-bash"><span class="sunlight-command">cd</span>&#xA0;<span class="sunlight-punctuation">~</span><span class="sunlight-operator">/</span><span class="sunlight-ident">iiif</span><span class="sunlight-operator">-</span><span class="sunlight-ident">workshop</span>
-<span class="sunlight-ident">java</span>&#xA0;<span class="sunlight-operator">-</span><span class="sunlight-ident">jar</span>&#xA0;<span class="sunlight-ident">iiif</span><span class="sunlight-operator">-</span><span class="sunlight-ident">tiler</span><span class="sunlight-operator">.</span><span class="sunlight-ident">jar</span>
-</span></pre></div></div></code></pre>
-<ul>
-<li>This will generate the IIIF image tiles in a <code>iiif</code> directory for every image it finds in the same directory as the iiif-tiler.jar.</li>
-</ul>
-<h2 id="step-4-point-the-chrome-webserver-to-your-iiif-workshop-directory">Step 4: Point the Chrome webserver to your <code>iiif-workshop</code> directory</h2>
-<ul>
-<li>Open Chrome</li>
-<li>Click the Apps button on the top left</li>
-</ul>
-<p><img src="../images/chrome/chrome_apps.png" alt="image"> </p>
-<ul>
-<li>Click on the <code>Web Server</code> (if this is not listed ensure you have installed the <a href="../prerequisites.html">prerequisites</a>).</li>
-<li>You should see the following:</li>
-</ul>
-<p><img src="../images/chrome/chrome_web_server.png" alt="image"> </p>
-<ul>
-<li>Click <code>choose folder</code> and select your <code>iiif-workshop</code> folder</li>
-<li>Where it says <code>Enter port</code> change it to 8887</li>
-<li>Click <code>Show Advanced Settings</code></li>
-<li>Ensure <code>Set CORS headers</code> has a tick next to it. </li>
-</ul>
-<h2 id="step-5-serve-your-iiif-image-through-a-http-server">Step 5: Serve your IIIF Image through a http server</h2>
-<ul>
-<li>Open a browser and navigate to <a href="http://127.0.0.1:8887/" target="_blank">http://127.0.0.1:8887/</a></li>
-<li>You should see a <code>iiif</code> directory and if you click that you should see your image file. </li>
-<li>Click this directory then click on the <code>info.json</code>.</li>
-<li>If your image was called picture.png the URL should be.</li>
-</ul>
-<p><code>http://127.0.0.1:8887/iiif/image/info.json</code></p>
-<ul>
-<li>If you see the info.json you are now ready to view your image in a IIIF Image viewer.</li>
-</ul>
-<h2 id="step-6-show-your-image-in-a-iiif-viewer">Step 6: Show your image in a IIIF Viewer</h2>
-<p>You can now load your image to a IIIF image viewer. The main image viewer is OpenseaDragon. This takes the URL of the info.json. So if your info.json URL is:</p>
-<p><code>http://127.0.0.1:8887/iiif/image/info.json</code></p>
-<p>Open it with OpenseaDragon:</p>
-<p><a href="http://iiif.gdmrdigital.com/openseadragon/index.html?image=http://127.0.0.1:8887/iiif/image/info.json" target="_blank">http://iiif.gdmrdigital.com/openseadragon/index.html?image=http://127.0.0.1:8887/iiif/image/info.json</a></p>
-<div class="git-author-container git-author-bottom"><div class="modified">Last modified by Glen Robson 2019-09-25 18:14:48</div><div class="created">Created by Glen Robson 2019-09-23 12:01:26</div></div>
+</li>
+<li>What formats can you request for this image?</li>
+</ol>
+<p>Looking at the IIIF API Specification <a href="https://iiif.io/api/image/2.1/" target="_blank">https://iiif.io/api/image/2.1/</a></p>
+<ol>
+<li>What status code should be returned if you ask for a format the image server doesn&apos;t support?</li>
+<li>What does <code>max</code> image size mean? How does it differ to <code>full</code>? When might you use this?</li>
+</ol>
+<p>Given the following info.json:</p>
+<pre><code>{
+    &quot;@context&quot;: &quot;http://iiif.io/api/image/2/context.json&quot;,
+    &quot;@id&quot;: &quot;http://example.com/iiif/image/2&quot;,
+    &quot;@type&quot;: &quot;iiif:Image&quot;,
+    &quot;protocol&quot;: &quot;http://iiif.io/api/image&quot;,
+    &quot;width&quot;: 400,
+    &quot;height&quot;: 400,
+}
+</code></pre><p>and image:</p>
+<p><img src="../images/4_Quadrants.jpg" alt="image">    </p>
+<p><strong>HINT</strong>: remember 0,0 is the top left of the image. </p>
+<ol>
+<li>What would the URL be to cut out the green quarter?</li>
+<li>What would the URL be to cut out the white quarter? </li>
+</ol>
+<h3 id="bonus-points">Bonus points:</h3>
+<p>Given the following info.json: <a href="https://iiif.lib.ncsu.edu/iiif/mc00198-008-ff0051-000-001_0001/info.json" target="_blank">https://iiif.lib.ncsu.edu/iiif/mc00198-008-ff0051-000-001_0001/info.json</a> </p>
+<ol>
+<li>How many tiles would you need to show the full image? </li>
+</ol>
+<p>If you finish have a look at <a href="http://puzzle.mikeapps.me/" target="_blank">http://puzzle.mikeapps.me/</a></p>
+<div class="git-author-container git-author-bottom"><div class="modified">Last modified by Glen Robson 2019-09-27 00:05:00</div><div class="created">Created by Glen Robson 2019-09-27 00:05:00</div></div>
                                 
                                 </section>
                             
@@ -418,12 +426,12 @@
 
             
                 
-                <a href="setting-up-cantaloupe.html" class="navigation navigation-prev " aria-label="Previous page: Running a IIIF Image server">
+                <a href="../prerequisites.html" class="navigation navigation-prev " aria-label="Previous page: Workshop Prerequisites">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="level0-github-hosting.html" class="navigation navigation-next " aria-label="Next page: Hosting with github pages">
+                <a href="iiif-hosting-saas.html" class="navigation navigation-next " aria-label="Next page: IIIF Hosting">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -434,7 +442,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Generating static tiles","level":"2.1.3","depth":2,"next":{"title":"Hosting with github pages","level":"2.1.4","depth":2,"path":"image-api/level0-github-hosting.md","ref":"image-api/level0-github-hosting.md","articles":[]},"previous":{"title":"Running a IIIF Image server","level":"2.1.2","depth":2,"path":"image-api/setting-up-cantaloupe.md","ref":"image-api/setting-up-cantaloupe.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","theme-default","toggle-chapters","git-author","-highlight","sunlight-highlighter","toggle-chapters"],"styles":{},"pluginsConfig":{"git-author":{"position":"bottom","modifyTpl":"Last modified by {user} {timeStamp}","createTpl":"Created by {user} {timeStamp}","timeStampFormat":"YYYY-MM-DD HH:mm:ss"},"include":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IIIF 5 Day Workshop","gitbook":"3.2.3"},"file":{"path":"image-api/static-tiles.md","mtime":"2019-09-25T16:36:56.368Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-26T22:09:13.445Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"2.1","depth":1,"next":{"title":"IIIF Hosting","level":"2.1.1","depth":2,"path":"image-api/iiif-hosting-saas.md","ref":"image-api/iiif-hosting-saas.md","articles":[]},"previous":{"title":"Workshop Prerequisites","level":"1.1.1","depth":2,"path":"prerequisites.md","ref":"prerequisites.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","theme-default","toggle-chapters","git-author","-highlight","sunlight-highlighter","toggle-chapters"],"styles":{},"pluginsConfig":{"git-author":{"position":"bottom","modifyTpl":"Last modified by {user} {timeStamp}","createTpl":"Created by {user} {timeStamp}","timeStampFormat":"YYYY-MM-DD HH:mm:ss"},"include":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"sunlight-highlighter":{"lineNumbers":false,"theme":"gitbook"},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IIIF 5 Day Workshop","gitbook":"3.2.3"},"file":{"path":"image-api/README.md","mtime":"2019-09-26T22:08:13.935Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-26T22:09:13.445Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
